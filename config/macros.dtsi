@@ -1,0 +1,74 @@
+/ {
+    macros {
+	m_emj1: emoji_joy {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp J &kp O &kp Z &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj2: emoji_hug {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp H &kp U &kp G &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj3: emoji_joytears {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp J &kp O &kp Z &kp T &kp E &kp A &kp R &kp S &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj4: emoji_grin {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp G &kp R &kp I &kp N &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj5: emoji_tear {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp T &kp E &kp A &kp R &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj6: emoji_heart {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp H &kp E &kp A &kp R &kp T &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj7: emoji_love {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp L &kp O &kp V &kp E &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj8: emoji_yes {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp Y &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj9: emoji_ape {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp A &kp P &kp E &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+          m_emj10: emoji_thinking {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp T &kp H &kp I &kp N &kp K &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+          };
+    };
+};

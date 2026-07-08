@@ -1,0 +1,57 @@
+/ {
+     behaviors {
+          // Layer Buttons
+          // Hold = Momentary Layer (&mo) | Tap = Sticky Layer (&sl)
+          l_ht: layer_hold_tap {
+               compatible = "zmk,behavior-hold-tap";
+               #binding-cells = <2>;
+               flavor = "hold-preferred";
+               tapping-term-ms = <200>;
+               retro-tap;
+               bindings = <&mo>, <&sl>;
+          };
+
+          tog_on: toggle_layer_on_only {
+               compatible = "zmk,behavior-toggle-layer";
+               #binding-cells = <1>;
+               display-name = "Toggle Layer On";
+               toggle-mode = "on";
+               locking;
+          };
+
+          tog_off: toggle_layer_off_only {
+               compatible = "zmk,behavior-toggle-layer";
+               #binding-cells = <1>;
+               display-name = "Toggle Layer Off";
+               toggle-mode = "off";
+               locking;
+          };
+
+          // Aerospace
+          aero: aero_hold_tap {
+               compatible = "zmk,behavior-hold-tap";
+               #binding-cells = <2>;
+               flavor = "hold-preferred";
+               tapping-term-ms = <200>;
+               bindings = <&mo>, <&kp>;
+          };
+
+          // Macros
+          mht: macro_hold_tap {
+               compatible = "zmk,behavior-hold-tap";
+               #binding-cells = <2>;
+               flavor = "hold-preferred";
+               tapping-term-ms = <200>;
+               bindings = <&mo>, <&sl>;
+          };
+
+          // Top Row Tap Dance
+          tr_td: top_row_tap_dance {
+               compatible = "zmk,behavior-tap-dance";
+               #binding-cells = <0>;
+               tapping-term-ms = <250>;
+               // 1: Sleep, 2: Emojis, 3: Func-Keys 1-10, 4: Func-Keys 11-20, 5: Service Layer
+               bindings = <&kp C_SLEEP>, <&tog_on EMOJIS>, <&tog_on FUNC1>, <&tog_on FUNC2>, <&tog_on SERV>;
+          };
+     };
+};
