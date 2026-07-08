@@ -218,18 +218,18 @@
                >;
           };
 
-               macros_logic_layer {
+          macros_logic_layer {
                display-name = "LOGIC";
                bindings = <
                // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
                // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
                     &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
-                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // │              │ MV->LEFT     │ MV->RIGHT    │ MV->PLAYHEAD │ MV->REC-POS  │              │                              │              │ JUMP REGION ←│              │ JUMP REGION →│              │              │
+                    &none          &kp LA(LEFT)   &kp LA(RIGHT)  &kp LG(BSLH)   &kp LS(LA(LG(R)))     &none                                  &none          &kp LS(LA(LG(LEFT)))  &none   &kp LS(LA(LG(RIGHT))) &none   &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
-                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // │              │ POINTER      │ SCISSORS     │ PENCIL/DRAW  │ FADE         │ GAIN         │                              │              │ SET IN-PT    │ IN-OUT CUR   │ SET OUT-PT   │              │              │
+                    &none  &kp LS(LA(LG(P))) &kp LS(LA(LG(S))) &kp LS(LA(LG(LBKT))) &kp LS(LA(LG(F))) &kp LS(LA(LG(G)))                      &none          &kp LC(LG(X))  &kp LG(U)      &kp LS(LA(LC(L)))     &none   &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │              │              │              │              │ LOCK LOGIC   ││              │              │              │              │              │              │              │
                     &none          &none          &none          &none          &none          &none          &tog M_LOGIC    &none          &none          &none          &none          &none          &none          &none
@@ -269,14 +269,14 @@
                // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
                     &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
-                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // │              │ <?php        │ $this->      │ /* */        │ /**          │ VSC Terminal │                              │ (() => {})   │ console.log()│ var_dump()   │              │              │              │
+                    &none          &m_c_php       &m_c_this      &m_c_bcom      &m_c_docb      &kp LG(J)                                     &m_c_afnc      &m_c_clog      &m_c_vdmp      &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
-                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // │              │ ->           │ =>           │ ===          │ !==          │ VSC Format   │                              │              │ END + ;      │ END + ; + RET│ !important   │              │              │
+                    &none          &m_c_tarr      &m_c_farr      &m_c_seq       &m_c_sneq      &kp LS(LA(F))                                 &none          &m_c_end       &m_c_endn      &m_c_imp       &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-               // │              │              │              │              │              │              │ LOCK CODING  ││              │              │              │              │              │              │              │
-                    &none          &none          &none          &none          &none          &none          &tog M_CODE     &none          &none          &none          &none          &none          &none          &none
+               // │              │              │              │              │              │ VSC Search   │ LOCK CODING  ││              │              │              │              │              │              │              │
+                    &none          &none          &none          &none          &none          &kp LS(LG(F))  &tog M_CODE     &none          &none          &none          &none          &none          &none          &none
                // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
                //                               │              │              │              │              │              ││              │              │              │              │              │
                                                   &none          &none          &none          &to S_CODE     &none           &none          &to S_CODE     &none          &none          &none

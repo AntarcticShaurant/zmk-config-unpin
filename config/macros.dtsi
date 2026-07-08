@@ -1,5 +1,6 @@
 / {
     macros {
+     // Emojis
 	m_emj1: emoji_joy {
                compatible = "zmk,behavior-macro";
                #binding-cells = <0>;
@@ -70,5 +71,136 @@
                tap-ms = <10>;
                bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp T &kp H &kp I &kp N &kp K &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
           };
+
+          // Coding
+          // ---------------- CODING MACROS ----------------
+
+        // 1. Fat Arrow (=>) for JS/TS/PHP
+        // Types: = (LS(N0)) then > (LS(NON_US_BSLH))
+        m_c_farr: code_fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N0) &kp LS(NON_US_BSLH)>;
+        };
+
+        // 2. Thin Arrow (->) for PHP/Dart
+        // Types: - (FSLH) then > (LS(NON_US_BSLH))
+        m_c_tarr: code_thin_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp FSLH &kp LS(NON_US_BSLH)>;
+        };
+
+        // 3. Strict Equality (===) for JS/TS/PHP
+        m_c_seq: code_strict_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N0) &kp LS(N0) &kp LS(N0)>;
+        };
+
+        // 4. Strict Not Equal (!==) for JS/TS/PHP
+        // Types: ! (LS(N1)) then ==
+        m_c_sneq: code_strict_neq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N1) &kp LS(N0) &kp LS(N0)>;
+        };
+
+        // 5. PHP Tag (<?php )
+        // Types: < (NON_US_BSLH), ? (LS(MINUS)), p h p [space]
+        m_c_php: code_php_tag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp NON_US_BSLH &kp LS(MINUS) &kp P &kp H &kp P &kp SPACE>;
+        };
+
+        // 6. Console Log (JS/TS) -> console.log() and puts cursor inside ()
+        // Note: () are LS(N8) and LS(N9)
+        m_c_clog: code_console_log {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT &kp L &kp O &kp G &kp LS(N8) &kp LS(N9) &kp LS(COMMA) &kp LEFT &kp LEFT>;
+        };
+
+        // 7. Var Dump (PHP) -> var_dump() and puts cursor inside ()
+        // Note: _ is LS(FSLH)
+        m_c_vdmp: code_var_dump {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp V &kp A &kp R &kp LS(FSLH) &kp D &kp U &kp M &kp P &kp LS(N8) &kp LS(N9) &kp LS(COMMA) &kp LEFT &kp LEFT>;
+        };
+
+        // 8. End Line & Semicolon
+        // Jumps to the end of the current line and adds a ; (LS(COMMA))
+        m_c_end: code_end_semi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LG(RIGHT) &kp LS(COMMA)>;
+        };
+
+        // 9. End Line, Semicolon, & New Line
+        // Same as above, but instantly drops you to the next line ready to type
+        m_c_endn: code_end_semi_new {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LG(RIGHT) &kp LS(COMMA) &kp RET>;
+        };
+
+        // 10. PHP Object Operator ($this->)
+        // Highly used in OOP PHP.
+        // Types: $ (LS(N4)), t, h, i, s, - (FSLH), > (LS(NON_US_BSLH))
+        m_c_this: code_php_this {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N4) &kp T &kp H &kp I &kp S &kp FSLH &kp LS(NON_US_BSLH)>;
+        };
+
+        // 11. JS/TS Arrow Function (() => {})
+        // Types the full arrow function and places your cursor cleanly inside the braces.
+        m_c_afnc: code_arrow_func {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N8) &kp LS(N9) &kp SPACE &kp LS(N0) &kp LS(NON_US_BSLH) &kp SPACE &kp LA(N8) &kp LA(N9) &kp LEFT &kp RET>;
+        };
+
+        // 12. CSS !important
+        // Types !important (great to throw on a single key when debugging CSS).
+        // Types: ! (LS(N1))
+        m_c_imp: code_css_important {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N1) &kp I &kp M &kp P &kp O &kp R &kp T &kp A &kp N &kp T>;
+        };
+
+        // 13. Block Comment (/* */)
+        // Types the comment block and puts your cursor in the middle.
+        // / is LS(N7), * is LS(RBKT)
+        m_c_bcom: code_block_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N7) &kp LS(RBKT) &kp SPACE &kp SPACE &kp LS(RBKT) &kp LS(N7) &kp LEFT &kp LEFT &kp LEFT>;
+        };
+
+        // 14. Doc Block Beginning (/** + Enter
+        // Types the beginning of a doc block and hits Enter, IDE will autocomplete
+        m_c_docb: code_docblock_comment {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp LS(N7) &kp LS(RBKT) &kp LS(RBKT) &kp RET>;
+        };
     };
 };
