@@ -20,7 +20,7 @@
 #define EMOJIS   6
 #define FUNC1    7
 #define FUNC2    8
-#define MCR      9
+#define MCRS     9
 #define M_LOGIC  10
 #define M_DORI   11
 #define M_CODE   12
