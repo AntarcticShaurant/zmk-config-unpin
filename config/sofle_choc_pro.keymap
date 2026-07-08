@@ -34,7 +34,7 @@
       };
 
       // Aerospace
-      aero: layer_hold_tap {
+      aero: aero_hold_tap {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
           flavor = "hold-preferred";
