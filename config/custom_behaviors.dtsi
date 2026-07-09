@@ -61,5 +61,21 @@
                // 1: Sleep, 2: Emojis, 3: Func-Keys 1-10, 4: Func-Keys 11-20, 5: Service Layer
                bindings = <&kp C_SLEEP>, <&tog_on EMOJIS>, <&tog_on FUNC1>, <&tog_on FUNC2>, <&tog_on SERV>;
           };
+
+          // Dorico: Default Move Up, Shift triggers Copy Up
+          dori_up: dorico_up_morph {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp LA(N)>, <&kp LS(LA(LG(UP)))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+
+          // Dorico: Default Move Down, Shift triggers Copy Down
+          dori_dn: dorico_down_morph {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp LA(M)>, <&kp LS(LA(LG(DOWN)))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
      };
 };

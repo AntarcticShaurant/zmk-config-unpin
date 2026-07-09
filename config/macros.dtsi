@@ -1,6 +1,6 @@
 / {
     macros {
-     // Emojis
+    // ---------------- EMOJIS ----------------
 	m_emj1: emoji_joy {
                compatible = "zmk,behavior-macro";
                #binding-cells = <0>;
@@ -72,8 +72,7 @@
                bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp T &kp H &kp I &kp N &kp K &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
           };
 
-          // Coding
-          // ---------------- CODING MACROS ----------------
+        // ---------------- CODING ----------------
 
         // 1. Fat Arrow (=>) for JS/TS/PHP
         // Types: = (LS(N0)) then > (LS(NON_US_BSLH))
@@ -202,5 +201,26 @@
             wait-ms = <5>; tap-ms = <5>;
             bindings = <&kp LS(N7) &kp LS(RBKT) &kp LS(RBKT) &kp RET>;
         };
+
+        // ---------------- DORICO ----------------
+
+        // 1. Filter All Dynamics and Remove them
+        m_d_frd: dorico_filter_remove_dyn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>; tap-ms = <50>;
+            bindings = <&kp LS(LC(LG(D))) &kp BSPC>;
+        };
+
+        // 2. Double Barline (||)
+        // Opens popover (RS + B), types two pipes (Option + 7 on DE-Mac), and hits Enter
+        m_d_dbar: dorico_double_barline {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp RS(B) &kp LA(N7) &kp LA(N7) &kp RET>;
+        };
+
     };
 };
