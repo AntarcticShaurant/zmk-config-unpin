@@ -28,12 +28,20 @@
           };
 
           // Aerospace
-          aero: aero_hold_tap {
+          as_t: aero_hold_tap {
                compatible = "zmk,behavior-hold-tap";
                #binding-cells = <2>;
                flavor = "hold-preferred";
                tapping-term-ms = <200>;
                bindings = <&mo>, <&kp>;
+          };
+
+          as_u: aero_hold_tap_unlock {
+               compatible = "zmk,behavior-hold-tap";
+               #binding-cells = <2>;
+               flavor = "hold-preferred";
+               tapping-term-ms = <200>;
+               bindings = <&mo>, <&tog_off>;
           };
 
           // Macros
