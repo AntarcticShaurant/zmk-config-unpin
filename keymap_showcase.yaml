@@ -1,0 +1,86 @@
+layout: {zmk_keyboard: sofle}
+layers:
+  MAIN:
+  - ['Tap Dance','1','2','3','4','5','6','7','8','9','0','ß']
+  - ['Tab','Q','W','E','R','T','Z','U','I','O','P','Ü']
+  - [{h: 'AERO', t: 'ESC'},'A','S','D','F','G','H','J','K','L','Ö','Ä','SHIFT']
+  - ['Y','X','C','V','B',{h: 'SELECT', t: 'ACTIVE MACROS'},'RETURN','N','M',',','.','-','SHIFT']
+  - ['CTRL','OPT','CMD','NAV','BACK-SPACE','SPACE','SYMBOLS','CMD','OPT','CTRL']
+  NAV:
+  - [{t: ▽, type: trans},BRI DOWN,BRI UP,KB LIGHT TOG,KB LIGHT DOWN,KB LIGHT UP,'','','','','','']
+  - [{t: ▽, type: trans},'◄◄','◄|','►/❚❚','|►','►►',PAGE UP,HOME,↑,END,'','']
+  - [{h: 'AERO', t: 'UNLOCK'},OPT,SHIFT,CMD,CTRL,MOUSE CONTROL,PAGE DN,←,↓,→,'','']
+  - [{t: ▽, type: trans},'',MUTE,VOL DOWN,VOL UP,'','LOCK',{t: ▽, type: trans},PREV,PREV TAB,'',NEXT TAB,NEXT,{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{type: held},DEL,{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  NAV MOUSE:
+  - [{t: ▽, type: trans},'','','','','','','','','','','']
+  - ['','','','','','','↑ SCROLL','← SCROLL','↑ MOVE','→ SCROLL','','']
+  - [{t: ▽, type: trans},OPT,SHIFT,CMD,CTRL,{t: 'MOUSE CONTROL', type: held},'↓ SCROLL','← MOVE','↓ MOVE','→ MOVE','','']
+  - [{t: ▽, type: trans},'','','','','','',{t: ▽, type: trans},'MB4 (BACK)','LEFT CLICK','MIDDLE CLICK','RIGHT CLICK','MB5 (FWD)',{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{type: held},'',{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  SYMBOLS:
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},'°']
+  - [{t: ▽, type: trans},'§','$','€','`','´','©','/','|','\','—','^']
+  - [{h: 'AERO', t: 'UNLOCK'},'@','?','!','"',"'",'~','&','+','=','%','#']
+  - [{t: ▽, type: trans},'_','[','{','(','<','LOCK',{t: ▽, type: trans},'>',')','}',']','*',{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{type: held},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  EMOJIS:
+  - ['MAIN','😊','🤗','😂','😅','🥲','❤️','😍','👍','🙈','🤔',GLOBE]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  F1-10:
+  - ['MAIN',F1,F2,F3,F4,F5,F6,F7,F8,F9,F10,{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  F11-20:
+  - ['MAIN',F11,F12,F13,F14,F15,F16,F17,F18,F19,F20,{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
+  MACROS SELECT:
+  - ['','','','','','','','','','','','']
+  - ['','','','','','','','','','','','']
+  - ['','','DORICO','','','','','','','LOGIC','','']
+  - ['','','','CODING','','',{type: held},'','','','','','','']
+  - ['','','','','','','','','','']
+  MACROS LOGIC:
+  - ['','','','','','','','','','','','']
+  - ['','','MOVE ←','MOVE →',MOVE TO RECT.,MOVE TO PLAYH.,'','JUMP REGION ←','','JUMP REGION →','','']
+  - [{h: 'AERO', t: 'UNLOCK'},POINTER,SCISSORS,PENCIL,FADE,GAIN,'',SET IN,SET SELECT. IN-OUT,SET OUT,'','']
+  - ['','','','','','','LOCK','','','','','','','']
+  - ['','','','MAIN','','','MAIN','','','']
+  MACROS DORICO:
+  - ['',Filt Selects,Filt Deselects,Filt Lyrics,Filt Techni.,Filter Dyn.,Filt Top N.,Filt Bot N.,Filt Slurs,Filt Rests,Filt Tupl.,Filt Gliss.]
+  - ['','',Prev Layout,Next Layout,Rem Trem.,Add Tremolo,Def. N.head,Decr Dyn Int,Move/Cpy Up,Incr Dyn Int,Page View,Res. Beaming]
+  - [{h: 'AERO', t: 'UNLOCK'},Align Dyn.,Unison,Divisi,Filt Notes,'',X Notehead,Decr Grid,Move/Cpy Dwn,Incr Grid,Galley View,Res. Stems]
+  - [SHIFT,Rem. Dyn f.G.,Ungroup Dyn.,Group Dyn.,Filt&Rm Dyn.,Dbl. Barline,'LOCK','','','',Select More,'','','']
+  - ['','','',MAIN,'','',MAIN,'','','']
+  MACROS CODING:
+  - ['','','','','','','','','','','','']
+  - ['','<?php','$this->','/* */','/**','VSC Terminal','(() => {})','console.log()','var_dump()','','','']
+  - [{h: 'AERO', t: 'UNLOCK'},'->','=>','===','!==','VSC Format','','END;','END; +RET','!im-portant','','']
+  - ['','','','','',VSC Search,'LOCK','','','','','','','']
+  - ['','','',MAIN,'','',MAIN,'','','']
+  AERO:
+  - [{t: ▽, type: trans},WS 1,WS 2,WS 3,WS 4,WS 5,WS 6,WS 7,WS 8,WS 9,WS 10,'']
+  - [Toggle WS,Toggle WS,Prev WS,Next WS,Resize,'','',SHIFT,↑,'','','']
+  - [{type: held},(UN-)LOCK,SHIFT,CMD,Full-screen,'',CMD,←,↓,→,'Menu','']
+  - ['','','','',Floating Tiling,'','','','WS 1','WS 2','WS 3','WS 4','WS 5','']
+  - ['','','','',Launch Mode,Alfred,'','','','']
+  AERO RESIZE:
+  - [{t: ▽, type: trans},'','','','','','','','','','','']
+  - ['','','',Big Resize,{t: 'Resize', type: held},'','',Balance Sizes,↑,Flatten Tree,'','']
+  - [{type: held},'','','','','','',←,↓,→,'','']
+  - ['','','','','','','','','','','','','','']
+  - ['','','','','','','','','','']
+  SERVICE:
+  - ['',BT 1,BT 2,BT 3,BT 4,BT 5,'','','','','',BT CLR]
+  - ['','','','','','',TOGGLE RGB,BRI DOWN,BRI UP,ANIM PREV,ANIM NEXT,'']
+  - ['UNLOCK','','','','','','',HUE DOWN,HUE UP,SPEED DOWN,SPEED UP,'']
+  - ['','','','','','','LOCK','ZMK Studio Unlock','',SAT DOWN,SAT UP,'','','']
+  - ['','','',{type: held},'','',{type: held},'','','']
