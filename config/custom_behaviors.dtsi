@@ -16,7 +16,7 @@
                #binding-cells = <1>;
                display-name = "Toggle Layer On";
                toggle-mode = "on";
-               //locking; <- only available in dev version for now!
+               locking; //<- only available in dev version for now!
           };
 
           tog_off: toggle_layer_off_only {
@@ -24,7 +24,7 @@
                #binding-cells = <1>;
                display-name = "Toggle Layer Off";
                toggle-mode = "off";
-               //locking; <- only available in dev version for now!
+               locking; //<- only available in dev version for now!
           };
 
           // Aerospace
