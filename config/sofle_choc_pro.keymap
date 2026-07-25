@@ -15,19 +15,24 @@
 #define S_DORI    1
 #define S_CODE    2
 #define NAV       3
-#define NAV_M     4
-#define SYMB      5
-#define EMOJIS    6
-#define FUNC1     7
-#define FUNC2     8
-#define MCRS      9
-#define M_LOGIC   10
-#define M_DORI    11
-#define M_CODE    12
-#define AERO      13
-#define AERO_LOCK 14
-#define AERO_R    15
-#define SERV      16
+#define NAV_L     4
+#define NAV_M     5
+#define SYMB      6
+#define SYMB_L    7
+#define EMOJIS    8
+#define FUNC1     9
+#define FUNC2     10
+#define MCRS      11
+#define M_LOGIC   12
+#define M_LOGIC_L 13
+#define M_DORI    14
+#define M_DORI_L  15
+#define M_CODE    16
+#define M_CODE_L  17
+#define AERO      18
+#define AERO_L    19
+#define AERO_R    20
+#define SERV      21
 
 #include "macros.dtsi"
 #include "custom_behaviors.dtsi"
@@ -100,7 +105,29 @@
                     &trans         &kp C_RW       &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_FF                                      &kp PG_UP      &kp HOME       &kp UP         &kp END        &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ LOCK/AERO    │ OPT Left     │ SHIFT Left   │ CMD Left     │ CTRL Left    │ MOUSE CTRL   │                              │ Page Down    │ ←            │ ↓            │ →            │              │              │
-                    &as_l AERO NAV &kp LALT       &kp LSHFT      &kp LGUI       &kp LCTRL      &mo NAV_M                                     &kp PG_DN      &kp LEFT       &kp DOWN       &kp RIGHT      &none          &none
+                    &as_l AERO NAV_LOCK &kp LALT  &kp LSHFT      &kp LGUI       &kp LCTRL      &mo NAV_M                                     &kp PG_DN      &kp LEFT       &kp DOWN       &kp RIGHT      &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │              │ MUTE         │ VOL DOWN     │ VOL UP       │              │              ││              │ Prev         │ Prev Tab     │              │ Next Tab     │ Next         │              │
+                    &trans         &none          &kp C_MUTE     &kp C_VOL_DN   &kp C_VOL_UP   &none          &trans          &trans         &kp LG(LEFT)   &kp LC(LS(TAB)) &none         &kp LC(TAB)    &kp LG(RIGHT)  &trans
+               // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
+               //                               │              │              │              │ (HELD)       │ DELETE       ││              │              │              │              │              │
+                                                  &trans         &trans         &trans         &trans         &kp DEL         &trans         &trans         &trans         &trans         &trans
+               //                               └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+               >;
+          };
+
+          nav_locked_layer {
+               display-name = "NAV";
+               bindings = <
+               // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+               // │              │ BRIGHTN DOWN │ BRIGHTN UP   │KB LI TOGGLE    KB LI DOWN   │ KB LI UP     │                              │              │              │              │              │              │              │
+                    &trans         &kp C_BRI_DN   &kp C_BRI_UP  &rgb_ug RGB_TOG &rgb_ug RGB_BRD &rgb_ug RGB_BRI                              &none          &none          &none          &none          &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │ REWIND       │ PREVIOUS     │ PLAY/PAUSE   │ NEXT         │ FAST FWD     │                              │ Page Up      │ Home         │ ↑            │ End          │              │              │
+                    &trans         &kp C_RW       &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_FF                                      &kp PG_UP      &kp HOME       &kp UP         &kp END        &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ UNLOCK/AERO  │ OPT Left     │ SHIFT Left   │ CMD Left     │ CTRL Left    │ MOUSE CTRL   │                              │ Page Down    │ ←            │ ↓            │ →            │              │              │
+                    &as_l AERO NAV_LOCK &kp LALT  &kp LSHFT      &kp LGUI       &kp LCTRL      &mo NAV_M                                     &kp PG_DN      &kp LEFT       &kp DOWN       &kp RIGHT      &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │ MUTE         │ VOL DOWN     │ VOL UP       │              │              ││              │ Prev         │ Prev Tab     │              │ Next Tab     │ Next         │              │
                     &trans         &none          &kp C_MUTE     &kp C_VOL_DN   &kp C_VOL_UP   &none          &trans          &trans         &kp LG(LEFT)   &kp LC(LS(TAB)) &none         &kp LC(TAB)    &kp LG(RIGHT)  &trans
@@ -144,7 +171,29 @@
                     &trans         &kp LS(N3)     &kp LS(N4)     &kp LA(E)      &kp LS(EQUAL)  &kp EQUAL                                     &kp LA(G)      &kp LS(N7)     &kp LA(N7)     &kp LS(LA(N7)) &kp LS(LA(FSLH)) &kp LS(FSLH)
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ LOCK/AERO    │ @            │ ?            │ !            │ "            │ '            │                              │ ~            │ &            │ +            │ =            │ %            │ #            │
-                    &as_l AERO SYMB &kp LA(L)     &kp LS(MINUS)  &kp LS(N1)     &kp LS(N2)     &kp LS(BSLH)                                  &kp LA(N)      &kp LS(N6)     &kp RBKT       &kp LS(N0)     &kp LS(N5)     &kp BSLH
+                    &as_l AERO SYMB_L &kp LA(L)   &kp LS(MINUS)  &kp LS(N1)     &kp LS(N2)     &kp LS(BSLH)                                  &kp LA(N)      &kp LS(N6)     &kp RBKT       &kp LS(N0)     &kp LS(N5)     &kp BSLH
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │ ^            │ [            │ {            │ (            │ <            │              ││              │ >            │ )            │ }            │ ]            │ *            │              │
+                    &trans         &kp NON_US_BSLH &kp LA(N5)    &kp LA(N8)     &kp LS(N8)     &kp GRAVE      &trans          &trans         &kp LS(GRAVE)   &kp LS(N9)     &kp LA(N9)     &kp LA(N6)     &kp LS(RBKT)   &trans
+               // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
+               //                               │              │              │              │              │              ││              │ (HELD)       │              │              │              │
+                                                  &trans         &trans         &trans         &trans         &trans          &trans         &trans         &trans         &trans         &trans
+               //                               └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+               >;
+          };
+
+          symbol_locked_layer {
+               display-name = "SYMBOLS";
+               bindings = <
+               // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+               // │              │              │              │              │              │              │                              │              │              │              │              │              │ °            │
+                    &trans         &trans         &trans         &trans         &trans         &trans                                        &trans         &trans         &trans         &trans         &trans         &kp LS(NON_US_BSLH)
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │ §            │ $            │ €            │ `            │ ´            │                              │ ©            │ /            │ |            │ \            │ —            │ _            │
+                    &trans         &kp LS(N3)     &kp LS(N4)     &kp LA(E)      &kp LS(EQUAL)  &kp EQUAL                                     &kp LA(G)      &kp LS(N7)     &kp LA(N7)     &kp LS(LA(N7)) &kp LS(LA(FSLH)) &kp LS(FSLH)
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ UNLOCK/AERO  │ @            │ ?            │ !            │ "            │ '            │                              │ ~            │ &            │ +            │ =            │ %            │ #            │
+                    &as_l AERO SYMB_L &kp LA(L)   &kp LS(MINUS)  &kp LS(N1)     &kp LS(N2)     &kp LS(BSLH)                                  &kp LA(N)      &kp LS(N6)     &kp RBKT       &kp LS(N0)     &kp LS(N5)     &kp BSLH
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │ ^            │ [            │ {            │ (            │ <            │              ││              │ >            │ )            │ }            │ ]            │ *            │              │
                     &trans         &kp NON_US_BSLH &kp LA(N5)    &kp LA(N8)     &kp LS(N8)     &kp GRAVE      &trans          &trans         &kp LS(GRAVE)   &kp LS(N9)     &kp LA(N9)     &kp LA(N6)     &kp LS(RBKT)   &trans
@@ -230,7 +279,29 @@
                     &none          &none          &kp LA(LEFT)   &kp LA(RIGHT)  &kp LS(LA(LG(R))) &kp LG(BSLH)                               &none          &kp LS(LA(LG(LEFT)))  &none   &kp LS(LA(LG(RIGHT))) &none   &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ LOCK/AERO    │ POINTER      │ SCISSORS     │ PENCIL/DRAW  │ FADE         │ GAIN         │                              │              │ SET IN-PT    │ SET IN-OUT   │ SET OUT-PT   │              │              │
-                    &as_l AERO M_LOGIC &kp LS(LA(LG(P))) &kp LS(LA(LG(S))) &kp LS(LA(LG(LBKT))) &kp LS(LA(LG(F))) &kp LS(LA(LG(G)))          &none          &kp LC(LG(X))  &kp LG(U)      &kp LS(LA(LC(L)))     &none   &none
+                    &as_l AERO M_LOGIC_L &kp LS(LA(LG(P))) &kp LS(LA(LG(S))) &kp LS(LA(LG(LBKT))) &kp LS(LA(LG(F))) &kp LS(LA(LG(G)))        &none          &kp LC(LG(X))  &kp LG(U)      &kp LS(LA(LC(L)))     &none   &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │              │              │              │              │              │              ││              │              │              │              │              │              │              │
+                    &none          &none          &none          &none          &none          &none          &none           &none          &none          &none          &none          &none          &none          &none
+               // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
+               //                               │              │              │              │              │              ││              │              │              │              │              │
+                                                  &none          &none          &none          &to MAIN       &none           &none          &to MAIN       &none          &none          &none
+               //                               └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+               >;
+          };
+
+          macros_logic_locked_layer {
+               display-name = "LOGIC";
+               bindings = <
+               // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
+                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │              │ MOVE ←       │ MOVE →       │ MV->REC-POS  │ MV->PLAYHEAD │                              │              │ JUMP REGION ←│              │ JUMP REGION →│              │              │
+                    &none          &none          &kp LA(LEFT)   &kp LA(RIGHT)  &kp LS(LA(LG(R))) &kp LG(BSLH)                               &none          &kp LS(LA(LG(LEFT)))  &none   &kp LS(LA(LG(RIGHT))) &none   &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ UNLOCK/AERO  │ POINTER      │ SCISSORS     │ PENCIL/DRAW  │ FADE         │ GAIN         │                              │              │ SET IN-PT    │ SET IN-OUT   │ SET OUT-PT   │              │              │
+                    &as_l AERO M_LOGIC_L &kp LS(LA(LG(P))) &kp LS(LA(LG(S))) &kp LS(LA(LG(LBKT))) &kp LS(LA(LG(F))) &kp LS(LA(LG(G)))        &none          &kp LC(LG(X))  &kp LG(U)      &kp LS(LA(LC(L)))     &none   &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │              │              │              │              │              ││              │              │              │              │              │              │              │
                     &none          &none          &none          &none          &none          &none          &none           &none          &none          &none          &none          &none          &none          &none
@@ -252,7 +323,29 @@
                     &none          &none     &kp LC(LA(LG(UP))) &kp LC(LA(LG(DOWN))) &kp LS(LA(LG(T))) &kp LA(LG(T))                         &kp LC(LA(LG(X))) &kp LC(LA(LG(U))) &dori_up &kp LC(LA(LG(O))) &kp LA(LG(N1)) &kp LC(LA(B))
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ LOCK/AERO    │ Align Dyn.   │ Unison       │ Divisi       │ Filt Notes   │              │                              │ X Notehead   │ Decr Grid    │ Move/Cpy Dwn │ Incr Grid    │ Galley View  │ Res. Stems   │
-                    &as_l AERO M_DORI &kp LS(LA(LG(A))) &kp LS(LC(D)) &kp LS(LG(D)) &kp LC(LA(LG(N))) &none                                  &kp LS(LA(LG(X))) &kp LC(LA(LG(LEFT))) &dori_dn &kp LC(LA(LG(RIGHT))) &kp LA(LG(N2)) &kp LS(LA(LG(S)))
+                    &as_l AERO M_DORI_L &kp LS(LA(LG(A))) &kp LS(LC(D)) &kp LS(LG(D)) &kp LC(LA(LG(N))) &none                                &kp LS(LA(LG(X))) &kp LC(LA(LG(LEFT))) &dori_dn &kp LC(LA(LG(RIGHT))) &kp LA(LG(N2)) &kp LS(LA(LG(S)))
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ SHIFT LEFT   │ Rem.Dyn.f.G. │ Ungroup Dyn. │ Group Dyn.   │ Filt&Rm Dyn. │ Dbl. Barline │              ││              │              │              │ Select More  │              │              │              │
+                    &kp LSHFT      &kp LC(LG(G))  &kp LC(LA(LG(G))) &kp LC(LA(G)) &m_d_frd     &m_d_dbar      &none           &none          &none          &none          &kp LS(LG(A))  &none          &none          &none
+               // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
+               //                               │              │              │              │              │              ││              │              │              │              │              │
+                                                  &none          &none          &none          &to S_DORI     &none           &none          &to S_DORI     &none          &none          &none
+               //                               └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+               >;
+          };
+
+          macros_dorico_locked_layer {
+               display-name = "DORICO";
+               bindings = <
+               // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+               // │              │ Filt Select  │ Filt Desel.  │ Filt Lyrics  │ Filt Techni. │ Filt Dyn.    │                              │ Filt Top N.  │ Filt Bot N.  │ Filt Slurs   │ Filt Rests   │ Filt Tupl.   │ Filt Gliss.  │
+                    &none          &kp LC(LA(S))  &kp LC(LA(LG(S))) &kp LC(LG(L)) &kp LC(LG(P)) &kp LS(LC(LG(D)))                            &kp LC(LG(UP)) &kp LC(LG(DOWN)) &kp LC(LG(S)) &kp LC(LG(R)) &kp LC(LG(N))  &kp LS(LA(LG(G)))
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │              │ Prev Layout  │ Next Layout  │ Rem Trem.    │ Add Tremolo  │                              │ Def. N.head  │ Decr Dyn Int │ Move/Cpy Up  │ Incr Dyn Int │ Page View    │ Res. Beaming │
+                    &none          &none     &kp LC(LA(LG(UP))) &kp LC(LA(LG(DOWN))) &kp LS(LA(LG(T))) &kp LA(LG(T))                         &kp LC(LA(LG(X))) &kp LC(LA(LG(U))) &dori_up &kp LC(LA(LG(O))) &kp LA(LG(N1)) &kp LC(LA(B))
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ UNLOCK/AERO  │ Align Dyn.   │ Unison       │ Divisi       │ Filt Notes   │              │                              │ X Notehead   │ Decr Grid    │ Move/Cpy Dwn │ Incr Grid    │ Galley View  │ Res. Stems   │
+                    &as_l AERO M_DORI_L &kp LS(LA(LG(A))) &kp LS(LC(D)) &kp LS(LG(D)) &kp LC(LA(LG(N))) &none                                &kp LS(LA(LG(X))) &kp LC(LA(LG(LEFT))) &dori_dn &kp LC(LA(LG(RIGHT))) &kp LA(LG(N2)) &kp LS(LA(LG(S)))
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ SHIFT LEFT   │ Rem.Dyn.f.G. │ Ungroup Dyn. │ Group Dyn.   │ Filt&Rm Dyn. │ Dbl. Barline │              ││              │              │              │ Select More  │              │              │              │
                     &kp LSHFT      &kp LC(LG(G))  &kp LC(LA(LG(G))) &kp LC(LA(G)) &m_d_frd     &m_d_dbar      &none           &none          &none          &none          &kp LS(LG(A))  &none          &none          &none
@@ -274,7 +367,29 @@
                     &none          &m_c_php       &m_c_this      &m_c_bcom      &m_c_docb      &kp LG(J)                                     &m_c_afnc      &m_c_clog      &m_c_vdmp      &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ LOCK/AERO    │ ->           │ =>           │ ===          │ !==          │ VSC Format   │                              │              │ END + ;      │ END + ; + RET│ !important   │              │              │
-                    &as_l AERO M_CODE &m_c_tarr   &m_c_farr      &m_c_seq       &m_c_sneq      &kp LS(LA(F))                                 &none          &m_c_end       &m_c_endn      &m_c_imp       &none          &none
+                    &as_l AERO M_CODE_L &m_c_tarr &m_c_farr      &m_c_seq       &m_c_sneq      &kp LS(LA(F))                                 &none          &m_c_end       &m_c_endn      &m_c_imp       &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │              │              │              │              │ VSC Search   │              ││              │              │              │              │              │              │              │
+                    &none          &none          &none          &none          &none          &kp LS(LG(F))  &none           &none          &none          &none          &none          &none          &none          &none
+               // └──────────────┴──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┴──────────────┘
+               //                               │              │              │              │              │              ││              │              │              │              │              │
+                                                  &none          &none          &none          &to S_CODE     &none           &none          &to S_CODE     &none          &none          &none
+               //                               └──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+               >;
+          };
+
+          macros_coding_locked_layer {
+               display-name = "CODING";
+               bindings = <
+               // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+               // │              │              │              │              │              │              │                              │              │              │              │              │              │              │
+                    &none          &none          &none          &none          &none          &none                                         &none          &none          &none          &none          &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │              │ <?php        │ $this->      │ /* */        │ /**          │ VSC Terminal │                              │ (() => {})   │ console.log()│ var_dump()   │              │              │              │
+                    &none          &m_c_php       &m_c_this      &m_c_bcom      &m_c_docb      &kp LG(J)                                     &m_c_afnc      &m_c_clog      &m_c_vdmp      &none          &none          &none
+               // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+               // │ UNLOCK/AERO  │ ->           │ =>           │ ===          │ !==          │ VSC Format   │                              │              │ END + ;      │ END + ; + RET│ !important   │              │              │
+                    &as_l AERO M_CODE_L &m_c_tarr &m_c_farr      &m_c_seq       &m_c_sneq      &kp LS(LA(F))                                 &none          &m_c_end       &m_c_endn      &m_c_imp       &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │              │              │              │ VSC Search   │              ││              │              │              │              │              │              │              │
                     &none          &none          &none          &none          &none          &kp LS(LG(F))  &none           &none          &none          &none          &none          &none          &none          &none
@@ -296,7 +411,7 @@
                     &kp LA(LC(TAB)) &kp LA(LC(TAB)) &kp LA(LC(W)) &kp LA(LC(E)) &mo AERO_R     &none                                         &none          &kp LSHFT      &kp LA(LC(UP)) &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ (HELD)       │ LOCK         │ SHIFT LEFT   │ CMD LEFT     │ FULLSCREEN   │              │                              │ CMD LEFT     │ ←            │ ↓            │ →            │ Menu         │              │
-                    &trans         &tog AERO_LOCK &kp LSHFT      &kp LGUI       &kp LA(LC(F))  &none                                         &kp LGUI     &kp LA(LC(LEFT)) &kp LA(LC(DOWN)) &kp LA(LC(RIGHT)) &kp LA(LC(SEMI))    &none
+                    &trans         &tog AERO_L    &kp LSHFT      &kp LGUI       &kp LA(LC(F))  &none                                         &kp LGUI     &kp LA(LC(LEFT)) &kp LA(LC(DOWN)) &kp LA(LC(RIGHT)) &kp LA(LC(SEMI))    &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │              │              │ FLOATING/TILING             │              ││              │ Workspace 1  │ Workspace 2  │ Workspace 3  │ Workspace 4  │ Workspace 5  │              │
                     &none          &none          &none          &none          &kp LS(LA(LC(F)))     &none   &none           &none          &kp LA(LC(N1)) &kp LA(LC(N2)) &kp LA(LC(N3)) &kp LA(LC(N4)) &kp LA(LC(N5)) &none
@@ -307,7 +422,7 @@
                >;
           };
 
-          aero_lock_layer {
+          aero_locked_layer {
                display-name = "AERO";
                bindings = <
                // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
@@ -318,7 +433,7 @@
                     &kp LA(LC(TAB)) &kp LA(LC(TAB)) &kp LA(LC(W)) &kp LA(LC(E)) &mo AERO_R     &none                                         &none          &kp LSHFT      &kp LA(LC(UP)) &none          &none          &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │ UNLOCK       │ UNLOCK       │ SHIFT LEFT   │ CMD LEFT     │ FULLSCREEN   │              │                              │ CMD LEFT     │ ←            │ ↓            │ →            │ Menu         │              │
-                    &tog AERO_LOCK &tog AERO_LOCK &kp LSHFT      &kp LGUI       &kp LA(LC(F))  &none                                         &kp LGUI     &kp LA(LC(LEFT)) &kp LA(LC(DOWN)) &kp LA(LC(RIGHT)) &kp LA(LC(SEMI))    &none
+                    &tog AERO_L    &tog AERO_L    &kp LSHFT      &kp LGUI       &kp LA(LC(F))  &none                                         &kp LGUI     &kp LA(LC(LEFT)) &kp LA(LC(DOWN)) &kp LA(LC(RIGHT)) &kp LA(LC(SEMI))    &none
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┐┌──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                // │              │              │              │              │ FLOATING/TILING             │              ││              │ Workspace 1  │ Workspace 2  │ Workspace 3  │ Workspace 4  │ Workspace 5  │              │
                     &none          &none          &none          &none          &kp LS(LA(LC(F)))     &none   &none           &none          &kp LA(LC(N1)) &kp LA(LC(N2)) &kp LA(LC(N3)) &kp LA(LC(N4)) &kp LA(LC(N5)) &none
