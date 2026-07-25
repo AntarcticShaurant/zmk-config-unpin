@@ -55,7 +55,7 @@
                #binding-cells = <0>;
                wait-ms = <10>;
                tap-ms = <10>;
-               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp Y &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
+               bindings = <&kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp Z &kp LS(DOT) &kp LS(DOT) &kp LS(DOT) &kp SPACE>;
           };
           m_emj9: emoji_ape {
                compatible = "zmk,behavior-macro";
@@ -75,21 +75,21 @@
         // ---------------- CODING ----------------
 
         // 1. Fat Arrow (=>) for JS/TS/PHP
-        // Types: = (LS(N0)) then > (LS(NON_US_BSLH))
+        // Types: = (LS(N0)) then > (LS(GRAVE))
         m_c_farr: code_fat_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp LS(N0) &kp LS(NON_US_BSLH)>;
+            bindings = <&kp LS(N0) &kp LS(GRAVE)>;
         };
 
         // 2. Thin Arrow (->) for PHP/Dart
-        // Types: - (FSLH) then > (LS(NON_US_BSLH))
+        // Types: - (FSLH) then > (LS(GRAVE))
         m_c_tarr: code_thin_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp FSLH &kp LS(NON_US_BSLH)>;
+            bindings = <&kp FSLH &kp LS(GRAVE)>;
         };
 
         // 3. Strict Equality (===) for JS/TS/PHP
@@ -110,12 +110,12 @@
         };
 
         // 5. PHP Tag (<?php )
-        // Types: < (NON_US_BSLH), ? (LS(MINUS)), p h p [space]
+        // Types: < (GRAVE), ? (LS(MINUS)), p h p [space]
         m_c_php: code_php_tag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp NON_US_BSLH &kp LS(MINUS) &kp P &kp H &kp P &kp SPACE>;
+            bindings = <&kp GRAVE &kp LS(MINUS) &kp P &kp H &kp P &kp SPACE>;
         };
 
         // 6. Console Log (JS/TS) -> console.log() and puts cursor inside ()
@@ -156,12 +156,12 @@
 
         // 10. PHP Object Operator ($this->)
         // Highly used in OOP PHP.
-        // Types: $ (LS(N4)), t, h, i, s, - (FSLH), > (LS(NON_US_BSLH))
+        // Types: $ (LS(N4)), t, h, i, s, - (FSLH), > (LS(GRAVE))
         m_c_this: code_php_this {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp LS(N4) &kp T &kp H &kp I &kp S &kp FSLH &kp LS(NON_US_BSLH)>;
+            bindings = <&kp LS(N4) &kp T &kp H &kp I &kp S &kp FSLH &kp LS(GRAVE)>;
         };
 
         // 11. JS/TS Arrow Function (() => {})
@@ -170,17 +170,17 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp LS(N8) &kp LS(N9) &kp SPACE &kp LS(N0) &kp LS(NON_US_BSLH) &kp SPACE &kp LA(N8) &kp LA(N9) &kp LEFT &kp RET>;
+            bindings = <&kp LS(N8) &kp LS(N9) &kp SPACE &kp LS(N0) &kp LS(GRAVE) &kp SPACE &kp LA(N8) &kp LA(N9) &kp LEFT &kp RET>;
         };
 
         // 12. CSS !important
-        // Types !important (great to throw on a single key when debugging CSS).
+        // Types !important; (great to throw on a single key when debugging CSS).
         // Types: ! (LS(N1))
         m_c_imp: code_css_important {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp LS(N1) &kp I &kp M &kp P &kp O &kp R &kp T &kp A &kp N &kp T>;
+            bindings = <&kp LS(N1) &kp I &kp M &kp P &kp O &kp R &kp T &kp A &kp N &kp T &kp LS(COMMA)>;
         };
 
         // 13. Block Comment (/* */)

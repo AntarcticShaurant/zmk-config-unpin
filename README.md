@@ -1,2 +1,2 @@
 ## Keymap
-![Keymap](./ll-solfe_keymap_0.0.5.svg)
+![Keymap](./keymap_showcase/my_keymap.svg)
