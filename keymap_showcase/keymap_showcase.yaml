@@ -62,9 +62,9 @@ layers:
   - ['','','',MAIN,'','',MAIN,'','','']
   MACROS CODING:
   - ['','','','','','','','','','','','']
-  - ['','<?php','$this->','/* */','/**','VSC Terminal','(() => {})','console.log()','var_dump()','','','']
-  - [{h: 'AERO', t: '(UN)LOCK'},'->','=>','===','!==','VSC Format','','END;','END; +RET','!im-portant','','']
-  - ['','','','','',VSC Search,'','','','','','','','']
+  - ['','','','','','VSC Terminal','<?php','/**','/* */','var dump','console.log','']
+  - [{h: 'AERO', t: '(UN)LOCK'},'JS Arrow Func.','','','VSC Format','VSC Search','$this->','->','=>','===','!==','']
+  - ['','','','','','','','','<?=','END+;','END+; +RET','!im-portant','','']
   - ['','','',MAIN,'','',MAIN,'','','']
   AERO:
   - [{t: ▽, type: trans},WS 1,WS 2,WS 3,WS 4,WS 5,WS 6,WS 7,WS 8,WS 9,WS 10,'']

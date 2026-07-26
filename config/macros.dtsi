@@ -109,15 +109,23 @@
             bindings = <&kp LS(N1) &kp LS(N0) &kp LS(N0)>;
         };
 
-        // 5. PHP Tag (<?php )
-        // Types: < (GRAVE), ? (LS(MINUS)), p h p [space]
+        // 5a. PHP Tag (<?php)
+        // Types: < (GRAVE), ? (LS(MINUS)), p h p
         m_c_php: code_php_tag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>; tap-ms = <5>;
-            bindings = <&kp GRAVE &kp LS(MINUS) &kp P &kp H &kp P &kp SPACE>;
+            bindings = <&kp GRAVE &kp LS(MINUS) &kp P &kp H &kp P>;
         };
 
+        // 5b. PHP Fast Echo Tag (<?= )
+        // Types: < (GRAVE), ? (LS(MINUS)), = (LS(N0))
+        m_c_php_e: code_php_echo_tag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>; tap-ms = <5>;
+            bindings = <&kp GRAVE &kp LS(MINUS) &kp LS(N0)>;
+        };
         // 6. Console Log (JS/TS) -> console.log() and puts cursor inside ()
         // Note: () are LS(N8) and LS(N9)
         m_c_clog: code_console_log {
