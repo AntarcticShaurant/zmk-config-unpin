@@ -208,8 +208,8 @@
                display-name = "EMOJIS";
                bindings = <
                // ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐                              ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
-               // │ Exit Emojis  │ 😊           │ 🤗            │ 😂           │ 😅           │ 🥲            │                              │ ❤️           │ 😍           │ 👍🏻            │ 🙈           │ 🤔           │ GLOBE        │
-                    &tog EMOJIS    &m_emj1        &m_emj2        &m_emj3        &m_emj4        &m_emj5                                       &m_emj6        &m_emj7        &m_emj8        &m_emj9        &m_emj10       &kp GLOBE
+               // │ Exit Emojis  │ 😊           │ 🤗            │ 😂           │ 😅           │ 🥲            │                              │ ❤️           │ 😍           │ 👍🏻            │ 🙈           │ 🤔           │ More Emojis  │
+                    &tog EMOJIS    &m_emj1        &m_emj2        &m_emj3        &m_emj4        &m_emj5                                       &m_emj6        &m_emj7        &m_emj8        &m_emj9        &m_emj10       &kp LC(LG(SPACE))
                // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤                              ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                     &trans         &trans         &trans         &trans         &trans         &trans                                        &trans         &trans         &trans         &trans         &trans         &trans
                     &trans         &trans         &trans         &trans         &trans         &trans                                        &trans         &trans         &trans         &trans         &trans         &trans

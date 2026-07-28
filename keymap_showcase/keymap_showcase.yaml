@@ -25,7 +25,7 @@ layers:
   - [{t: ▽, type: trans},'_','[','{','(','<',{t: ▽, type: trans},{t: ▽, type: trans},'>',')','}',']','*',{t: ▽, type: trans}]
   - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{type: held},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
   EMOJIS:
-  - ['MAIN','😊','🤗','😂','😅','🥲','❤️','😍','👍','🙈','🤔',GLOBE]
+  - ['MAIN','😊','🤗','😂','😅','🥲','❤️','😍','👍','🙈','🤔',MORE EMOJIS]
   - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
   - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
   - [{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans},{t: ▽, type: trans}]
