@@ -7,11 +7,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp A>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp A>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -23,11 +22,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N7>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N7>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -39,11 +37,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N2>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N2>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -55,11 +52,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N5>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N5>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -71,11 +67,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N9 &kp N7 &kp N2>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N7 &kp N2>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -87,11 +82,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N2 &kp N7 &kp N6 &kp N4>,
+                   <&kp U &kp RBKT &kp N2 &kp N7 &kp N6 &kp N4>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -103,11 +97,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp D>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp D>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -119,11 +112,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N4 &kp N4 &kp D &kp SPACE &kp U &kp RBKT &kp N1 &kp F &kp N3 &kp F &kp B>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N4 &kp N4 &kp D &kp SPACE &kp U &kp RBKT &kp N1 &kp F &kp N3 &kp F &kp B>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -135,11 +127,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N6 &kp N4 &kp N8>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N4 &kp N8>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
@@ -151,11 +142,10 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings =
+                   <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
-                   <&macro_wait_time 300>,
-                   <&kp U>,
                    <&macro_wait_time 10>,
-                   <&kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N4>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N4>,
                    <&macro_wait_time 400>,
                    <&kp RET>,
                    <&macro_wait_time 10>,
