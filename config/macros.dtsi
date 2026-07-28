@@ -11,9 +11,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp A>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj2: emoji_hug {
@@ -26,9 +26,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N7>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj3: emoji_joytears {
@@ -41,9 +41,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N2>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj4: emoji_grin {
@@ -56,9 +56,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N5>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj5: emoji_tear {
@@ -71,9 +71,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N7 &kp N2>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj6: emoji_heart {
@@ -86,9 +86,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N2 &kp N7 &kp N6 &kp N4>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj7: emoji_love {
@@ -101,9 +101,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp D>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj8: emoji_yes {
@@ -115,10 +115,10 @@
                    <&macro_wait_time 600>,
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
-                   <&kp U &kp RBKT &kp N1 &kp F &kp N4 &kp N4 &kp D &kp SPACE &kp U &kp RBKT &kp N1 &kp F &kp N3 &kp F &kp B>,
-                   <&macro_wait_time 400>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N4 &kp N4 &kp D>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj9: emoji_ape {
@@ -131,9 +131,9 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N4 &kp N8>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
-                   <&macro_wait_time 10>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
         m_emj10: emoji_thinking {
@@ -146,9 +146,158 @@
                    <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
                    <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N4>,
-                   <&macro_wait_time 400>,
+                   <&macro_wait_time 800>,
                    <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };m_emj1: emoji_joy {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
                    <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp A>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj2: emoji_hug {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N7>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj3: emoji_joytears {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N2>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj4: emoji_grin {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp N5>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj5: emoji_tear {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N7 &kp N2>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj6: emoji_heart {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N2 &kp N7 &kp N6 &kp N4>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj7: emoji_love {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N0 &kp D>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj8: emoji_yes {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N4 &kp N4 &kp D>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj9: emoji_ape {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N6 &kp N4 &kp N8>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
+                   <&kp RET>;
+        };
+        m_emj10: emoji_thinking {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <10>;
+               tap-ms = <10>;
+               bindings =
+                   <&macro_wait_time 600>,
+                   <&kp LC(LG(SPACE))>,
+                   <&macro_wait_time 10>,
+                   <&kp U &kp RBKT &kp N1 &kp F &kp N9 &kp N1 &kp N4>,
+                   <&macro_wait_time 800>,
+                   <&kp RET>,
+                   <&macro_wait_time 400>,
                    <&kp RET>;
         };
 
