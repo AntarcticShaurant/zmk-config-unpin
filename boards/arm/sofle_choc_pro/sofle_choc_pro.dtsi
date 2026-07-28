@@ -58,6 +58,10 @@
     };
 };
 
+&gpiote {
+    status = "okay";
+};
+
 &gpio0 {
     status = "okay";
 };
